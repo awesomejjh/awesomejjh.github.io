@@ -24,8 +24,6 @@ jobs:
           POLICY_APPROVED: ${{ secrets.POLICY_APPROVED }}
           PRIVACY_OFFICER: ${{ secrets.PRIVACY_OFFICER }}
           EFFECTIVE_DATE: ${{ secrets.EFFECTIVE_DATE }}
-          HOSTING_KO: ${{ secrets.HOSTING_KO }}
-          HOSTING_EN: ${{ secrets.HOSTING_EN }}
           DISCLOSURE_KO: ${{ secrets.DISCLOSURE_KO }}
           DISCLOSURE_EN: ${{ secrets.DISCLOSURE_EN }}
         run: python3 scripts/build.py
