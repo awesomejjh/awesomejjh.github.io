@@ -1,5 +1,20 @@
-# DANBI site templates
+# SASOWARE — Official Website Infrastructure
 
-Templates are incomplete and must not be published directly. The Pages workflow is manual only and refuses to build without approved text, a date, officer name, legal approval and a manual publication confirmation. Values must be entered by the owner in repository Actions secrets. The generated site intentionally publishes the officer name; secrets are not committed or printed. Checks validate structure, not legal compliance.
+**SASOWARE** is an independent software developer brand. This repository contains the **pre-publication source templates and a controlled GitHub Pages pipeline** for its app information and privacy policies, including **DANBI (단비)**, a grocery value calculator.
 
-Required secrets: `PRIVACY_OFFICER` and `POLICY_APPROVED` (set to `YES` only after legal review). The effective date is automatically set to the Korean calendar date of the approved manual publication. Select GitHub Actions as the Pages source. Run the workflow manually with `publish_confirmed` set to `YES` only after all prerequisites and publication approval. The template includes factual Gmail and GitHub descriptions; these do not independently prove that every applicable overseas-transfer disclosure duty is satisfied. Keep `POLICY_APPROVED` unset until the owner has verified legal sufficiency and specifically approved publication.
+> **Not a live publication.** The website and privacy policy are not approved for public release. The template contains review-only content; never publish it directly.
+
+## Brand website transition
+
+The website will be operated under a dedicated **SASOWARE GitHub organization** once that organization and its Pages repository have been verified. This original staging repository is preserved for safe handoff; no personal developer account name needs to appear in public website copy.
+
+## Controlled publication
+
+- **Publishing:** manual GitHub Actions only; no push-triggered website publication.
+- **Privacy officer:** owner-provided `PRIVACY_OFFICER` Actions secret; never commit the person's name to repository source or logs. The name will be visible **in the final published policy**.
+- **Date:** effective date is set to the South Korea calendar date of the approved deployment.
+- **Legal approval:** `POLICY_APPROVED=YES` must reflect a genuinely completed review, not a workaround; keep it unset until then.
+- **Deployment confirmation:** a manual workflow dispatch requires `publish_confirmed=YES`.
+- **Verification:** the build checks required content, internal routes, Korean/English policy sections, data-deletion links, and `app-ads.txt`. Structural validation is not legal clearance.
+
+**Current status:** publication is held pending final legal-disclosure verification, owner-provided identity and an explicit publication decision. Do not deploy review templates or set approval flags speculatively. This project must not affect DANBI Android development, MAGABI or P2W Online.
