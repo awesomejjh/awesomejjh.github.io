@@ -23,7 +23,6 @@ jobs:
           PUBLISH_CONFIRMED: ${{ inputs.publish_confirmed }}
           POLICY_APPROVED: ${{ secrets.POLICY_APPROVED }}
           PRIVACY_OFFICER: ${{ secrets.PRIVACY_OFFICER }}
-          EFFECTIVE_DATE: ${{ secrets.EFFECTIVE_DATE }}
           DISCLOSURE_KO: ${{ secrets.DISCLOSURE_KO }}
           DISCLOSURE_EN: ${{ secrets.DISCLOSURE_EN }}
         run: python3 scripts/build.py
