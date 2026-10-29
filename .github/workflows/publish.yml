@@ -23,8 +23,6 @@ jobs:
           PUBLISH_CONFIRMED: ${{ inputs.publish_confirmed }}
           POLICY_APPROVED: ${{ secrets.POLICY_APPROVED }}
           PRIVACY_OFFICER: ${{ secrets.PRIVACY_OFFICER }}
-          DISCLOSURE_KO: ${{ secrets.DISCLOSURE_KO }}
-          DISCLOSURE_EN: ${{ secrets.DISCLOSURE_EN }}
         run: python3 scripts/build.py
       - name: Verify generated pages
         run: python3 scripts/validate.py _site
