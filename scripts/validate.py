@@ -18,6 +18,9 @@ pages = {}
 for p in root.rglob('*.html'):
     obj = Page(); obj.feed(p.read_text(encoding='utf-8')); pages[p] = obj
     if not obj.viewport: raise SystemExit('Missing viewport.')
+    text = p.read_text(encoding='utf-8')
+    if 'name="robots" content="noindex"' in text or 'data-review-only' in text:
+        raise SystemExit('Private-review restriction remained in approved page.')
 for p, obj in pages.items():
     for link in obj.links:
         if link.startswith(('https://', 'mailto:')): continue
