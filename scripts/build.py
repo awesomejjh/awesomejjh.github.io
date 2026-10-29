@@ -8,7 +8,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 out = root / '_site'
-names = ('PRIVACY_OFFICER', 'EFFECTIVE_DATE', 'HOSTING_KO', 'HOSTING_EN', 'DISCLOSURE_KO', 'DISCLOSURE_EN')
+names = ('PRIVACY_OFFICER', 'EFFECTIVE_DATE', 'DISCLOSURE_KO', 'DISCLOSURE_EN')
 values = {name: os.environ.get(name, '').strip() for name in names}
 if os.environ.get('POLICY_APPROVED') != 'YES' or os.environ.get('PUBLISH_CONFIRMED') != 'YES':
     raise SystemExit('Blocked: legal policy approval and manual publication confirmation required.')
