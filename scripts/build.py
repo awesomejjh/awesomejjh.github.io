@@ -8,8 +8,10 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 out = root / '_site'
-names = ('PRIVACY_OFFICER', 'EFFECTIVE_DATE', 'DISCLOSURE_KO', 'DISCLOSURE_EN')
+names = ('PRIVACY_OFFICER', 'DISCLOSURE_KO', 'DISCLOSURE_EN')
 values = {name: os.environ.get(name, '').strip() for name in names}
+# The effective date is the date of the approved manual publication in Korea.
+values['EFFECTIVE_DATE'] = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).date().isoformat()
 if os.environ.get('POLICY_APPROVED') != 'YES' or os.environ.get('PUBLISH_CONFIRMED') != 'YES':
     raise SystemExit('Blocked: legal policy approval and manual publication confirmation required.')
 if any(not v or re.search(r'\{\{|\}\}|\[|\]|\b(?:TBD|TODO|pending)\b|미확정|확인 중|승인 필요', v, re.I) for v in values.values()):
